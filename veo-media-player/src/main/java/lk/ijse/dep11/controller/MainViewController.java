@@ -34,6 +34,7 @@ public class MainViewController {
     public Button btnStop;
     public Button btnForward;
     public BorderPane root;
+    public Button btnClose;
     MediaPlayer videoPlayer;
 
     public void btnBrowseOnAction(ActionEvent actionEvent) {
@@ -134,5 +135,9 @@ public class MainViewController {
 
     public void slrScrollOnMousePressed(MouseEvent mouseEvent) {
         videoPlayer.seek(Duration.seconds(slrScroll.getValue()));
+    }
+
+    public void btnCloseOnAction(ActionEvent actionEvent) {
+        System.exit(0);
     }
 }

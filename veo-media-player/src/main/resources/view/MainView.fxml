@@ -6,6 +6,7 @@
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
@@ -13,12 +14,11 @@
 <?import javafx.scene.media.MediaView?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep11.controller.MainViewController">
    <center>
       <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="371.0" fitWidth="507.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assets/stage.png" />
                </image>
@@ -31,39 +31,15 @@
                   <Insets top="100.0" />
                </StackPane.margin>
             </ImageView>
-            <ImageView fitHeight="62.0" fitWidth="103.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_LEFT">
-               <image>
-                  <Image url="@../assets/pngegg(9).png" />
-               </image>
-               <StackPane.margin>
-                  <Insets right="100.0" />
-               </StackPane.margin>
-            </ImageView>
-            <Label prefHeight="28.0" prefWidth="94.0" style="-fx-background-radius: 20px; -fx-background-color: white;" text="Veo " textFill="#2c79b9" StackPane.alignment="TOP_LEFT">
-               <font>
-                  <Font name="Uroob Regular" size="39.0" />
-               </font>
-               <StackPane.margin>
-                  <Insets bottom="60.0" left="60.0" />
-               </StackPane.margin>
-            </Label>
-            <Label text="Media Player" StackPane.alignment="TOP_LEFT">
-               <StackPane.margin>
-                  <Insets left="110.0" top="20.0" />
-               </StackPane.margin>
-               <font>
-                  <Font name="Uroob Regular" size="21.0" />
-               </font>
-            </Label>
             <MediaView fx:id="mvDisplay" fitHeight="200.0" fitWidth="200.0" />
-            <VBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="600.0" style="-fx-background-color: white;" StackPane.alignment="BOTTOM_CENTER">
+            <VBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="600.0" style="-fx-background-color: darkblue;" StackPane.alignment="BOTTOM_CENTER">
                <children>
                   <Slider fx:id="slrScroll" onMouseDragged="#slrScrollOnMouseDragged" onMousePressed="#slrScrollOnMousePressed">
                      <VBox.margin>
                         <Insets left="10.0" right="10.0" top="5.0" />
                      </VBox.margin>
                   </Slider>
-                  <HBox prefHeight="100.0" prefWidth="200.0">
+                  <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: darkblue;">
                      <children>
                         <Button fx:id="btnBrowse" mnemonicParsing="false" onAction="#btnBrowseOnAction" style="-fx-background-color: lightblue;" text="BROWSE">
                            <HBox.margin>
@@ -129,7 +105,7 @@
                               <Font name="System Bold Italic" size="12.0" />
                            </font>
                         </Button>
-                        <Label alignment="CENTER" text="VOL.">
+                        <Label alignment="CENTER" text="VOL." textFill="WHITE">
                            <HBox.margin>
                               <Insets left="8.0" top="3.0" />
                            </HBox.margin>
@@ -144,7 +120,7 @@
                         </Slider>
                      </children>
                      <VBox.margin>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        <Insets bottom="20.0" left="5.0" right="5.0" top="10.0" />
                      </VBox.margin>
                   </HBox>
                </children>
@@ -152,4 +128,30 @@
          </children>
       </StackPane>
    </center>
+   <top>
+      <AnchorPane prefHeight="30.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="46.0" layoutY="-4.0" prefHeight="53.0" prefWidth="61.0" style="-fx-background-color: white; -fx-background-radius: 15px;" text="Veo " textFill="#2c79b9">
+               <font>
+                  <Font name="Uroob Regular" size="39.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="51.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/pngegg(9).png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="96.0" layoutY="15.0" prefHeight="29.0" prefWidth="99.0" style="-fx-background-color: white; -fx-background-radius: 15px;" text="Media Player">
+               <font>
+                  <Font name="Uroob Regular" size="21.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnClose" layoutX="548.0" layoutY="4.0" mnemonicParsing="false" onAction="#btnCloseOnAction" style="-fx-background-color: #c60000;" text="X" textFill="WHITE" AnchorPane.rightAnchor="12.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </top>
 </BorderPane>

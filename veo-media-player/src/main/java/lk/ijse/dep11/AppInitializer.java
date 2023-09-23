@@ -24,6 +24,10 @@ public class AppInitializer extends Application {
         primaryStage.setScene(scene);
         primaryStage.setTitle("Veo Media Player");
 
+        primaryStage.initStyle(StageStyle.TRANSPARENT);
+        root.setBackground(Background.fill(Color.TRANSPARENT));
+        scene.setFill(Color.TRANSPARENT);
+
         scene.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
